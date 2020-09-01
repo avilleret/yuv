@@ -86,6 +86,8 @@ INSTALL ( TARGETS ${ly_lib_static}						DESTINATION lib )
 INSTALL ( TARGETS ${ly_lib_shared} LIBRARY				DESTINATION lib RUNTIME DESTINATION bin )
 INSTALL ( DIRECTORY ${PROJECT_SOURCE_DIR}/include/		DESTINATION include )
 
+if(UNIX AND NOT APPLE)
 # create the .deb and .rpm packages using cpack
 INCLUDE ( CM_linux_packages.cmake )
+endif()
 
